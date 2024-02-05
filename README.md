@@ -33,10 +33,12 @@ The project follows the following folder structure:
 │   ├── components/        # Reusable UI components
 │   ├── config/            # Constants and configuration files
 │   ├── utils/             # Utility functions and helper modules
-│   ├── services/          # API services
+│   ├── data/              # Api requests
 │   ├── enums/             # Enums for app.
 │   ├── styles/            # Styles configs for project
+│   ├── models/            # For handling response data conversion
 │   ├── navigation/        # Navigation configuration
+│   ├── provider/          # State management
 │   └── screens/           # App screens
 │
 ├── main.dart              # Entry point of the application
