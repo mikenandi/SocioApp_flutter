@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learn_basics/components/app_text_field.dart';
 import 'package:flutter_learn_basics/config/app_routes.dart';
+import 'package:flutter_learn_basics/provider/app_repo.dart';
+import 'package:flutter_learn_basics/provider/login_provider.dart';
 import 'package:flutter_learn_basics/styles/app_colors.dart';
+import 'package:provider/provider.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -41,14 +44,18 @@ class Login extends StatelessWidget {
                 const SizedBox(
                   height: 100,
                 ),
-                const AppTextField(
+                AppTextField(
                   hint: 'username',
+                  onChange: (value) =>
+                      context.read<LoginProvider>().username = value,
                 ),
                 const SizedBox(
                   height: 16,
                 ),
-                const AppTextField(
+                AppTextField(
                   hint: 'Password',
+                  onChange: (value) =>
+                      context.read<LoginProvider>().password = value,
                 ),
                 Align(
                   alignment: Alignment.centerRight,
@@ -71,6 +78,14 @@ class Login extends StatelessWidget {
                   height: 48,
                   child: ElevatedButton(
                     onPressed: () {
+                      // context.read<LoginProvider>().login().then((value) {
+                      //   context.read<AppRepo>().user = value.user;
+                      //   context.read<AppRepo>().token = value.token;
+
+                      //   Navigator.of(context)
+                      //       .pushReplacementNamed(AppRoutes.main);
+                      // });
+
                       Navigator.of(context)
                           .pushReplacementNamed(AppRoutes.main);
                     },

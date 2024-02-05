@@ -4,7 +4,11 @@ import 'package:flutter_learn_basics/styles/app_text.dart';
 
 class PostItem extends StatelessWidget {
   final String user;
-  const PostItem({super.key, required this.user});
+
+  const PostItem({
+    super.key,
+    required this.user,
+  });
 
   @override
   Widget build(BuildContext context) {

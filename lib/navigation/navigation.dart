@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learn_basics/components/bottom_nav_item.dart';
+import 'package:flutter_learn_basics/components/new_post_modal.dart';
 import 'package:flutter_learn_basics/config/app_icons.dart';
 import 'package:flutter_learn_basics/enums/enums.dart';
 import 'package:flutter_learn_basics/screens/home.dart';
@@ -26,6 +27,15 @@ class _MainPageState extends State<MainPage> {
         bottomNavigationBar: MyButtonNavigationBar(
           currentIndex: currentIndex,
           onTap: (value) {
+            if (value == Menus.add) {
+              showModalBottomSheet(
+                context: context,
+                isScrollControlled: true,
+                builder: (context) => const NewPostModal(),
+              );
+
+              return;
+            }
             setState(() {
               currentIndex = value;
             });

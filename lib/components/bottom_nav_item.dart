@@ -20,7 +20,7 @@ class BottomNavItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      onPressed: () => onPressed(),
+      onPressed: onPressed,
       icon: SvgPicture.asset(
         icon,
         colorFilter: ColorFilter.mode(
